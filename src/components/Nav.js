@@ -45,8 +45,8 @@ export default class Nav extends Component {
 const NavWrapper = styled.nav`
   background: var(--mainRed);
   .nav-link {
-    color: var(--mainWhite) !important;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: uppercase;
+    color: var(--mainWhite) !important;
   }
 `;
