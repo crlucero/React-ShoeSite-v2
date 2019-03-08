@@ -10,3 +10,13 @@ body {
   background: var(--mainWhite) !important;
   color: var(--mainDark) !important;
 }
+
+.text-title {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.text-grey {
+  color: var(--mainGrey);
+}
