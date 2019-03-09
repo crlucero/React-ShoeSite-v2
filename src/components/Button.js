@@ -10,7 +10,7 @@ export const ButtonContainer = styled.button`
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   &:hover {
-    background: var(--maineDark);
+    background: var(--mainDark);
     color: var(--mainWhite);
   }
   &:focus {

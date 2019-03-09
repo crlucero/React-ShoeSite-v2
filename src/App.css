@@ -20,3 +20,7 @@ body {
 .text-grey {
   color: var(--mainGrey);
 }
+
+.text-red {
+  color: var(--mainRed);
+}
