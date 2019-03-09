@@ -9,7 +9,7 @@ export default class Nav extends Component {
       <div>
         <NavWrapper className="navbar navbar-expand-sm justify-content-between navbar-dark px-sm-5">
           <Link to="/" className="navbar-brand">
-            <i class="fas fa-crown" />
+            <i className="fas fa-crown" />
           </Link>
           <ul className="navbar-nav align-items-center">
             <li className="nav-items ml-5">
