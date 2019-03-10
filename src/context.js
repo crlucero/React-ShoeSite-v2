@@ -31,11 +31,19 @@ class ShoeProvider extends Component {
     });
   };
 
-  handleDetail = () => {
-    console.log('hello from shoe detail');
+  getItem = id => {
+    const clickedShoe = this.state.shoes.find(item => item.id === id);
+    return clickedShoe;
   };
-  addToCart = () => {
-    console.log('hello from add to cart');
+
+  handleDetail = id => {
+    const clickedShoe = this.getItem(id);
+    this.setState(() => {
+      return { shoeDetails: clickedShoe };
+    });
+  };
+  addToCart = id => {
+    console.log(`hello from add to cart.id is ${id}`);
   };
 
   render() {

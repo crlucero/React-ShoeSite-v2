@@ -5,6 +5,7 @@ export const ButtonContainer = styled.button`
   font-size: 1.4rem;
   background: transparent;
   border: transparent;
+  border-radius: 8px;
   font-weight: light;
   text-transform: uppercase;
   cursor: pointer;
@@ -16,12 +17,5 @@ export const ButtonContainer = styled.button`
   }
   &:focus {
     outline: none;
-  }
-
-  .button-group {
-    background: transparent;
-    text-align: center;
-    background-color: red;
-    border: solid 1px var(--mainRed);
   }
 `;

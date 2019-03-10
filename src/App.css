@@ -24,3 +24,10 @@ body {
 .text-red {
   color: var(--mainRed);
 }
+.button-group {
+  margin: 5%;
+  background: var(--mainRed);
+  color: var(--mainWhite);
+  text-align: center;
+  border: solid 1px var(--mainRed);
+}
