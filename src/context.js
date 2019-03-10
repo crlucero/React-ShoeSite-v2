@@ -13,13 +13,15 @@ const ShoeContext = React.createContext();
 class ShoeProvider extends Component {
   state = {
     shoes: [],
-    shoeDetails: shoeListDetails
+    shoeDetails: shoeListDetails,
+    cart: []
   };
 
   componentDidMount() {
     this.setShoes();
   }
 
+  // Loops through shoe list, assigns values of item, makes new set of values, and adds each item to page through CompDidMount()
   setShoes = () => {
     let tempShoes = [];
     shoeList.forEach(item => {
@@ -36,14 +38,30 @@ class ShoeProvider extends Component {
     return clickedShoe;
   };
 
+  // Gets details of clicked shoe
   handleDetail = id => {
     const clickedShoe = this.getItem(id);
     this.setState(() => {
       return { shoeDetails: clickedShoe };
     });
   };
+
   addToCart = id => {
-    console.log(`hello from add to cart.id is ${id}`);
+    let tempShoes = [...this.state.shoes]; //Gives access to shoes in state and creates another copy
+    const index = tempShoes.indexOf(this.getItem(id)); // Gets index of shoe
+    const addedShoe = tempShoes[index]; // Sets addedShoe variable equal to array and specific item index
+    addedShoe.inCart = true;
+    addedShoe.shoe = 1;
+    const price = addedShoe.price;
+    addedShoe.total = price;
+    this.setState(
+      () => {
+        return { shoes: tempShoes, cart: [...this.state.cart, addedShoe] };
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
   };
 
   render() {
