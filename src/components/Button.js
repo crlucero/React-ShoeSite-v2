@@ -12,8 +12,16 @@ export const ButtonContainer = styled.button`
   &:hover {
     background: var(--mainDark);
     color: var(--mainWhite);
+    border-radius: 8px;
   }
   &:focus {
     outline: none;
+  }
+
+  .button-group {
+    background: transparent;
+    text-align: center;
+    background-color: red;
+    border: solid 1px var(--mainRed);
   }
 `;

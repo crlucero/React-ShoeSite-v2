@@ -12,8 +12,23 @@ const ShoeContext = React.createContext();
 
 class ShoeProvider extends Component {
   state = {
-    shoes: shoeList,
+    shoes: [],
     shoeDetails: shoeListDetails
+  };
+
+  componentDidMount() {
+    this.setShoes();
+  }
+
+  setShoes = () => {
+    let tempShoes = [];
+    shoeList.forEach(item => {
+      const singleItem = { ...item };
+      tempShoes = [...tempShoes, singleItem];
+    });
+    this.setState(() => {
+      return { shoes: tempShoes };
+    });
   };
 
   handleDetail = () => {
