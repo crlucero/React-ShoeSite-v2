@@ -4,6 +4,12 @@
 
 My goal for this project is to make a sneaker website. I want users to be able to browse the site for shoes, add it to a 'want list' and even add them to their shopping cart. The shopping cart should accurately calculate the price of all shoes in the cart. The user should be able to click on a shoe from the landing page and see details about that individual shoe.
 
+At the moment, New Arrivals is my landing page. On the landing page, the user can hover over individual shoe cards to receive the hover effects. The hover effect includes an animation that slides the 'add to cart' button onto the shoe image. The user can click on the add to cart button and a modal will pop up notifying the user of the addition to their cart. The modal will then give the user the option to continue shopping or to view their cart. Currently the route for 'go to cart' works but there is nothing in that component. If the user clicks on 'continue shopping' while still in the modal, they will be taken back to the home screen. Once at the home screen, if the user then hovers over the shoe they previously added to the cart, the animation will now show that the item is currently in their cart and they will no longer be able to add that shoe to the cart.
+
+User can also click on a shoe to be taken to that shoe's details and can add that selected shoe to their cart from the Shoe Details page, and will receive the same modal.
+
+My next step is to work on the shopping cart component so that the user can see their total after adding shoes to the cart.
+
 ## Structure
 
 ![Alt text](<src/assets/images/(structure.jpg)?raw=true> 'Title')

@@ -51,7 +51,7 @@ export const shoeList = [
     id: 5,
     title: "Air Jordan III 'Black/Cement'",
     img: 'img/air-jordan-3-black-cement.jpeg',
-    price: 24,
+    price: 200,
     company: 'Jordan',
     info:
       "The 'Black/Cement' Air Jordan III released in 1988, 1994, 2001, 2008 (along with the Air Jordan XX as part of a 'Countdown Pack'), and 2011, so one can be forgiven if one is less that excited for 2018’s most recent drop. But an all-time classic is an all-time classic, and like the five previous versions, the sixth time was also a charm. With improved materials and the return of the ever-important original “Nike Air” logo on the heel, Jordan Brand had another hit on its hands with the latest retro of the “Black/Cement” III. Pairs may not have disappeared the second they hit the shelves, but the sneaker had no trouble selling out upon its initial release—or its many restocks throughout the year. And for fans of the model who’d yearned for a true-to-form remake of the original, the chance to actually buy it was what was important.",
