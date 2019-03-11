@@ -66,19 +66,6 @@ class ShoeProvider extends Component {
     );
   };
 
-  // openModal = id => {
-  //   const shoe = this.getItem(id);
-  //   this.setState(() => {
-  //     return { modalShoe: shoe, modalOpen: true };
-  //   });
-  // };
-
-  // closeModal = () => {
-  //   this.setState(() => {
-  //     return { modalOpen: false };
-  //   });
-  // };
-
   openModal = id => {
     const shoe = this.getItem(id);
     this.setState(() => {
