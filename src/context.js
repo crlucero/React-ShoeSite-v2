@@ -56,7 +56,7 @@ class ShoeProvider extends Component {
     const index = tempShoes.indexOf(this.getItem(id)); // Gets index of shoe
     const addedShoe = tempShoes[index]; // Sets addedShoe variable equal to array and specific item index
     addedShoe.inCart = true;
-    addedShoe.shoe = 1;
+    addedShoe.count = 1;
     const price = addedShoe.price;
     addedShoe.total = price;
     this.setState(
@@ -83,10 +83,51 @@ class ShoeProvider extends Component {
 
   // Will add and take away items in cart
   increment = id => {
-    console.log('increment method');
+    let tempCart = [...this.state.cart];
+    //return if shoe id is matching id that i'm passing (adding)
+    const selectedShoe = tempCart.find(shoe => shoe.id === id);
+
+    //Finds index to selected shoe, and uses index to find that shoe
+    const index = tempCart.indexOf(selectedShoe);
+    const shoe = tempCart[index];
+
+    shoe.count = shoe.count + 1;
+    shoe.total = shoe.count * shoe.price;
+
+    this.setState(
+      () => {
+        return { cart: [...tempCart] };
+      },
+      () => {
+        this.addTotals();
+      }
+    );
   };
+
   decrement = id => {
-    console.log('decrement method');
+    let tempCart = [...this.state.cart];
+    //return if shoe id is matching id that i'm passing (adding)
+    const selectedShoe = tempCart.find(shoe => shoe.id === id);
+
+    //Finds index to selected shoe, and uses index to find that shoe
+    const index = tempCart.indexOf(selectedShoe);
+    const shoe = tempCart[index];
+
+    shoe.count = shoe.count - 1;
+
+    if (shoe.count === 0) {
+      this.removeItem(id);
+    } else {
+      shoe.total = shoe.count * shoe.price;
+      this.setState(
+        () => {
+          return { cart: [...tempCart] };
+        },
+        () => {
+          this.addTotals();
+        }
+      );
+    }
   };
 
   removeItem = id => {
