@@ -14,7 +14,7 @@ class ShoeProvider extends Component {
   state = {
     shoes: [],
     shoeDetails: shoeListDetails,
-    cart: shoeList,
+    cart: [],
     modalOpen: false,
     modalShoe: shoeListDetails,
     cartSubtotal: 0,
@@ -64,7 +64,7 @@ class ShoeProvider extends Component {
         return { shoes: tempShoes, cart: [...this.state.cart, addedShoe] };
       },
       () => {
-        console.log(this.state);
+        this.addTotals();
       }
     );
   };
@@ -95,6 +95,21 @@ class ShoeProvider extends Component {
 
   clearCart = () => {
     console.log('cart is cleared');
+  };
+
+  addTotals = () => {
+    let subTotal = 0;
+    this.state.cart.map(shoe => (subTotal += shoe.total));
+    const tempTax = subTotal * 0.101;
+    const tax = parseFloat(tempTax.toFixed(2));
+    const total = subTotal + tax;
+    this.setState(() => {
+      return {
+        cartSubtotal: subTotal,
+        cartTax: tax,
+        cartTotal: total
+      };
+    });
   };
 
   render() {
