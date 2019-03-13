@@ -90,7 +90,30 @@ class ShoeProvider extends Component {
   };
 
   removeItem = id => {
-    console.log('item has been removed');
+    // Gives access to shoes in cart
+    let tempShoes = [...this.state.shoes];
+    let tempCart = [...this.state.cart];
+
+    // Filter cart and return only items that don't match ID
+    tempCart = tempCart.filter(shoe => shoe.id !== id);
+
+    const index = tempShoes.indexOf(this.getItem(id));
+    let deletedShoe = tempShoes[index];
+    deletedShoe.inCart = false;
+    deletedShoe.count = 0;
+    deletedShoe.total = 0;
+
+    this.setState(
+      () => {
+        return {
+          cart: [...tempCart],
+          shoes: [...tempShoes]
+        };
+      },
+      () => {
+        this.addTotals();
+      }
+    );
   };
 
   // Sets cart to empy array
