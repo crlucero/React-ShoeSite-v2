@@ -93,8 +93,18 @@ class ShoeProvider extends Component {
     console.log('item has been removed');
   };
 
+  // Sets cart to empy array
   clearCart = () => {
-    console.log('cart is cleared');
+    this.setState(
+      () => {
+        return { cart: [] };
+      },
+      () => {
+        // Gives new copy of origianl shoe list
+        this.setShoes();
+        this.addTotals();
+      }
+    );
   };
 
   addTotals = () => {
