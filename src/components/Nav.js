@@ -17,7 +17,7 @@ export default class Nav extends Component {
                 New Arrivals
               </Link>
             </li>
-            <li className="nav-items ml-5">
+            {/* <li className="nav-items ml-5">
               <Link to="upcoming" className="nav-link">
                 Upcoming
               </Link>
@@ -26,7 +26,7 @@ export default class Nav extends Component {
               <Link to="wanted" className="nav-link">
                 Wanted
               </Link>
-            </li>
+            </li> */}
           </ul>
           <Link to="/cart" className="ml-auto">
             <ButtonContainer>
